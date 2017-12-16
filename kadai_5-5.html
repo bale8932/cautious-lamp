@@ -1,0 +1,120 @@
+<HTML>
+    <HEAD>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習</title>
+        <style>
+        .myStyle {
+            font-weight: bold;
+            border: 1px solid gray;
+        }
+
+#Contents {
+width: 700px;
+
+margin:0 auto;
+
+background:#CCCCCC;
+
+}
+
+#Main {
+
+float:left;
+
+width:300px;
+
+height:300px;
+
+background:#333DFF;
+
+}
+
+#Side {
+
+float:left;
+
+width:300px;
+
+height:300px;
+
+background:#27C42A;
+
+}
+
+.clearfix:after {
+
+content: ".";
+
+display: block;
+
+height: 0;
+
+clear: both;
+
+visibility: hidden;
+
+}
+
+.clearfix {display: inline-table;}
+
+ 
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {height: 1%;}
+
+.clearfix {display: block;}
+
+/* End hide from IE-mac */
+
+    </style>
+  <SCRIPT LANGUAGE="JavaScript">
+        function calc(ch) {
+	    if (ch == "=") {
+		document.form1.text1.value =
+		    eval(document.form1.text1.value);
+	    } else if (ch == "C") {
+		document.form1.text1.value = "";
+	    } else {
+		document.form1.text1.value += ch;
+	    }
+        }
+ 
+ function xxx() {
+   var target = document.getElementById("searchLink");
+   if(document.form1.text1.value == ""){
+        alert("入力されていません");
+　　return false;
+    }else{
+        target.innerText = document.form1.text1.value;
+      }
+   }
+    </SCRIPT>
+    </HEAD>
+    <BODY>
+  <div class="clearfix" id="Contents">
+    <FORM NAME="form1" ACTION="">
+    <TT>
+    <INPUT TYPE="text" id="textForm" NAME="text1" VALUE="" SIZE=26>
+    <P>
+    <INPUT TYPE="button" VALUE=" １ " onClick="calc('1')">
+    <INPUT TYPE="button" VALUE=" ２ " onClick="calc('2')">
+    <INPUT TYPE="button" VALUE=" ３ " onClick="calc('3')">
+    <P>
+    <INPUT TYPE="button" VALUE=" ４ " onClick="calc('4')">
+    <INPUT TYPE="button" VALUE=" ５ " onClick="calc('5')">
+    <INPUT TYPE="button" VALUE=" ６ " onClick="calc('6')">
+    <P>
+    <INPUT TYPE="button" VALUE=" ７ " onClick="calc('7')">
+    <INPUT TYPE="button" VALUE=" ８ " onClick="calc('8')">
+    <INPUT TYPE="button" VALUE=" ９ " onClick="calc('9')">
+    <P>
+    <INPUT TYPE="button" VALUE=" ℡ " onClick="calc('T')">
+    <INPUT TYPE="button" VALUE=" ０ " onClick="calc('0')">
+    <INPUT TYPE="button" VALUE=" Ｃ " onClick="calc('C')">
+    </TT>
+    </FORM>
+  </div>
+ <a id="searchLink" href="tel:"></a><br/>
+    </BODY>
+    </HTML>
